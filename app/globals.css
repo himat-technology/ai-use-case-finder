@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+:root {
+  --background: #f4f8ff;
+  --foreground: #0f172a;
+  --teal-950: #042f2e;
+  --teal-900: #134e4a;
+  --teal-800: #115e59;
+  --teal-700: #0f766e;
+  --amber: #f59e0b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+@layer base {
+  * {
+    border-color: rgb(226 232 240);
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 0% 0%, rgba(6, 182, 212, 0.18), transparent 42%),
+      radial-gradient(ellipse at 100% 0%, rgba(217, 70, 239, 0.14), transparent 40%),
+      radial-gradient(ellipse at 50% 100%, rgba(245, 158, 11, 0.12), transparent 45%),
+      linear-gradient(180deg, #f7fbff 0%, #f3f7ff 40%, #faf5ff 100%);
+    color: var(--foreground);
+    font-family: var(--font-sans), "Manrope", sans-serif;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display), "Fraunces", Georgia, serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #0f766e;
+    outline-offset: 2px;
+  }
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 9s ease-in-out infinite 1.2s;
+}

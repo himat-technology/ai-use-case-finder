@@ -1,0 +1,13 @@
+/* HiMat brand theme tokens */
+
+:root {
+  --brand-ink: #042f2e;
+  --brand-primary: #0d9488;
+  --brand-cyan: #06b6d4;
+  --brand-fuchsia: #d946ef;
+  --brand-amber: #f59e0b;
+  --brand-coral: #fb7185;
+  --surface: #f7fbff;
+  --surface-elevated: rgba(255, 255, 255, 0.92);
+  --border-subtle: rgba(15, 23, 42, 0.08);
+}
